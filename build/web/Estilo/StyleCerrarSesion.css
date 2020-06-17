@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-07-2019, 22:26:32
+    Author     : Fox
+*/
+
+.FondoCerrarSesion{
+    background:url(../Fondos/FondoAdios.jpg), #000;
+    background-size: cover;
+    background-attachment:fixed;
+}
+
+.ColorMensaje{
+    color: #000000;
+}
