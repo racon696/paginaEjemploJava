@@ -1,0 +1,88 @@
+CREATE DATABASE jpa;
+use jpa;
+
+CREATE TABLE cliente (
+id_cliente int, 
+nombre varchar(40),  
+apellidoP varchar(40), 
+apellidoM varchar(40), 
+rut varchar(12),
+CONSTRAINT cliente_id_cliente_pk PRIMARY KEY (id_cliente));
+
+
+CREATE TABLE usuario (
+id_usuario int, 
+rut varchar(12), 
+nombre varchar(40), 
+apellidoP varchar(40), 
+apellidoM varchar(40), 
+tipousuario int, 
+user varchar(40), 
+clave varchar(40),
+CONSTRAINT usuario_id_usuario_pk PRIMARY KEY (id_usuario));
+
+CREATE TABLE producto (
+id_producto int, 
+nombre varchar(40), 
+precio int, 
+stock int,
+CONSTRAINT producto_id_producto_pk PRIMARY KEY (id_producto));
+
+
+CREATE TABLE venta (
+folioventa int, 
+fecha varchar(10), 
+hora varchar(10), 
+nroboleta int, 
+id_usuario int, 
+id_cliente int, 
+id_producto int, 
+cantidad int, 
+total int, 
+CONSTRAINT producto_folioventa_pk PRIMARY KEY (folioventa));
+
+
+
+INSERT INTO cliente VALUES (1,'Juan','Pina','Platano','1-1');
+INSERT INTO cliente VALUES (2,'Tolomeo','Manzana','Melon','1-2');
+INSERT INTO cliente VALUES (3,'Atenea','Pera','Papaya','1-3');
+INSERT INTO cliente VALUES (4,'Marcos','Sandia','Nispero','1-4');
+INSERT INTO cliente VALUES (5,'Edionisio','Frutilla','Fresa','1-5');
+INSERT INTO cliente VALUES (6,'Cleopatra','Mango','Mora','1-6');
+INSERT INTO cliente VALUES (7,'Magdalena','Cereza','Calabaza','1-7');
+INSERT INTO cliente VALUES (8,'Maria','Damasco','Durazno','1-8');
+INSERT INTO cliente VALUES (9,'Macarena','Cereza','Cacahuate','1-9');
+INSERT INTO cliente VALUES (10,'Manuela','Durazo','Durazno','1-10');
+
+INSERT INTO usuario VALUES (1,'2-1','SALVADOR','BELINCHON','MILLAN',0,'sbm','123');
+INSERT INTO usuario VALUES (2,'2-2','LAURA','PINEDO','MARCH',1,'lpm','123');
+INSERT INTO usuario VALUES (3,'2-3','CARLOS','VIZCAINO','VALDIVIA',1,'cvv','123');
+INSERT INTO usuario VALUES (4,'2-4','ANA','HUETE','ALCOLEA',0,'aha','123');
+INSERT INTO usuario VALUES (5,'2-5','JOAQUIN','MENENDEZ','POPA',1,'jmp','123');
+INSERT INTO usuario VALUES (6,'2-6','EVA','VAL','SAUCEDO',1,'evs','123');
+INSERT INTO usuario VALUES (7,'2-7','JOAN','HERMOSILLA','PANTOJA',0,'jhp','123');
+INSERT INTO usuario VALUES (8,'2-8','CONCEPCION','PORTILLO','BAUZA',0,'cpb','123');
+INSERT INTO usuario VALUES (9,'2-9','JO','HOSILLA','ANTOJA',0,'jha','123');
+INSERT INTO usuario VALUES (10,'2-10','CONCE','ORTILLO','UZA',0,'cou','123');
+
+insert into venta values(11,'1999-05-01','17:20',111,1,1,1,10,1000);
+insert into venta values(22,'2002-08-02','12:20',222,2,2,2,20,1000);
+insert into venta values(33,'2003-02-03','13:20',333,3,3,3,30,1000);
+insert into venta values(44,'2004-01-04','14:20',444,4,4,4,40,1000);
+insert into venta values(55,'2005-03-05','15:20',555,5,5,5,50,1000);
+insert into venta values(66,'2006-07-06','16:20',666,6,6,6,60,1000);
+insert into venta values(77,'2007-06-07','17:20',777,7,7,7,70,1000);
+insert into venta values(88,'2008-09-08','18:20',888,8,8,8,80,1000);
+insert into venta values(99,'2009-01-09','19:20',999,9,9,9,90,1000);
+insert into venta values(10,'2010-09-10','20:20',101,10,10,10,100,10000);
+
+INSERT INTO producto VALUES (1,'Teclado',4000,50);
+INSERT INTO producto VALUES (2,'Organizador',2000,75);
+INSERT INTO producto VALUES (3,'Corchetera',1500,40);
+INSERT INTO producto VALUES (4,'Mouse',2500,30);
+INSERT INTO producto VALUES (5,'Pizarra',6000,20);
+INSERT INTO producto VALUES (6,'Sticky Notes',1000,150);
+INSERT INTO producto VALUES (7,'Plumon',800,300);
+INSERT INTO producto VALUES (8,'Lapiz Pasta',500,500);
+INSERT INTO producto VALUES (9,'Perforador',1900,60);
+INSERT INTO producto VALUES (10,'Carpeta',1700,70);
